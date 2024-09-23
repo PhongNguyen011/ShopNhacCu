@@ -7,7 +7,7 @@ const Header = () => {
           <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container d-flex justify-content-between align-items-center">
               <a className="navbar-brand" href="/">
-                <img src="img/logo.png" alt="Logo" className="img-fluid rounded-circle" />
+                <img src="img/logo.png" alt="Logo" height={50} width={50} className="rounded-circle" />
               </a>
               <div className="d-flex justify-content-center flex-grow-1 ms-4">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -53,7 +53,7 @@ const Header = () => {
                   data-toggle="modal"
                   data-target="#loginModal"
                 >
-                  <i className="fas fa-shopping-cart"/>
+                  <i className="fas fa-shopping-cart" onClick={() => navigate("/shop")}/>
                 </button>
                 <button
                 type="button"

@@ -6,6 +6,7 @@ import ProductdetalsPage from "./pages/productdetals/productdetal"
 import LayoutAdmin from "./layouts/admin/layout"
 import AdminDashboard from "./pages/admin/dashboard/dashboard"
 import Authen from "./pages/authen/authen"
+import ShopPage from "./shop/shop"
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="product" element={<ProductPage/>}/>
             <Route path="productdetals" element={<ProductdetalsPage/>}/>
             <Route path="authen" element={<Authen/>}/>
+            <Route path="shop" element={<ShopPage/>}/>
           </Route>
           <Route element={<LayoutAdmin/>}>
             <Route path="/admin/dashboard" element={<AdminDashboard/>}/>

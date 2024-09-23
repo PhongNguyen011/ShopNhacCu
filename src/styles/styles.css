@@ -1,9 +1,6 @@
 .navbar {
     background-color: #FFD700;
 }
-.navbar-brand img {
-    width: 120px;
-}
 .search-bar {
     width: 400px;
 }
@@ -59,15 +56,11 @@
 
 .subscribe-form button {
     padding: 8px 15px;
-    background-color: #ffc107;
     border: none;
     border-radius: 0 4px 4px 0;
     cursor: pointer;
 }
 
-.subscribe-form button:hover {
-    background-color: #e0a800;
-}
 
 .footer-bottom {
     background-color: #333;

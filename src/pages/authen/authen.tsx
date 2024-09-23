@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 const Authen = () => {
+  const navigate = useNavigate();
   return (
     <div className="d-flex justify-content-center align-items-center vh-100">
       <div
@@ -10,9 +13,9 @@ const Authen = () => {
           id="pills-tab"
           role="tablist"
         >
-          <li className="nav-item me-3" role="presentation">
+          <li className="nav-item" role="presentation">
             <button
-              className="buy-btn"
+              className="buy-btn me-3"
               id="pills-home-tab"
               data-bs-toggle="pill"
               data-bs-target="#pills-home"
@@ -71,10 +74,14 @@ const Authen = () => {
                   placeholder="Nhập mật khẩu"
                 />
               </div>
-              <button type="submit" className="buy-btn btn-primary w-100">
+              <button
+                type="submit"
+                className="buy-btn btn-primary w-100"
+                onClick={() => navigate("/admin/dashboard")}
+              >
                 Đăng nhập
               </button>
-              <a href="#" className="d-block text-center mt-2">
+              <a href="#" className="text-dark d-block text-center mt-2">
                 Quên mật khẩu?
               </a>
             </form>

@@ -9,16 +9,13 @@ const Footer =()=>{
           <h5>Cập nhật thông tin</h5>
           <form className="subscribe-form">
             <input type="email" placeholder="Email của bạn" aria-label="Email của bạn" /> 
-            <button type="submit" className="buy-btn text-dark">Đăng ký</button>
+            <button type="submit" className="buy-btn">Đăng ký</button>
           </form>
           <h5 className="mt-3">Kết nối với chúng tôi</h5>
           <div className="social-icons">
-            <a href="https://www.facebook.com/profile.php?id=100040929200864&mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer">
-              <img src="img/facebook.png" className="img-fluid" /> 
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=100040929200864&mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer">
-              <img src="img/zalo.png" className="img-fluid" /> 
-            </a>
+          <i className="fa-brands fa-facebook me-3"></i>
+          <i className="fa-brands fa-instagram me-3"></i>
+          <i className="fa-brands fa-tiktok"></i>
           </div>
         </div>
         <div className="col-md-3">

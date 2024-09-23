@@ -81,7 +81,7 @@ const HomePage = () => {
             </div>
           </div>
           <div className="container">
-            <h2 className="mt-4 text-center">Sản phẩm nổi bật</h2>
+            <h2 className="mt-4 mb-4 text-center">Sản phẩm nổi bật</h2>
             <div className="row" id="product-list">
               <div className="col-md-4 mb-4">
                 <div className="product-card text-center p-3 border rounded">
