@@ -9,7 +9,7 @@ const ProductPage = () => {
     <>
       <div className="container">
         <div className="row row-cols-1 row-cols-lg-2 row-cols-xl-3 gy-4">
-          {data?.products.slice(0, 5).map((items, index) => {
+          {data?.products.map((items, index) => {
             return (
               <>
                 <div className="col" key={index}>
@@ -22,7 +22,7 @@ const ProductPage = () => {
                     <div className="card-body">
                       <h4 className="card-title">{items.name}</h4>
                       <p className="card-text">{items.price} VND</p>
-                      <button className="buy-btn" type="button">Add to Cart</button>
+                      <button className="buy-btn" type="button">Mua</button>
                     </div>
                   </div>
                 </div>

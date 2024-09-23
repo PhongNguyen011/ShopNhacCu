@@ -1,28 +1,47 @@
 import { useNavigate } from "react-router-dom";
-
 const Header = () => {
   const navigate = useNavigate()
   return (
     <>
-      <>
-        <div>
+      <div>
           <nav className="navbar navbar-expand-lg navbar-light">
-            <div className="container">
-              <a className="navbar-brand" href="#">
-                <img src="img/tam.png" alt="" className="img-fluid" />
+            <div className="container d-flex justify-content-between align-items-center">
+              <a className="navbar-brand" href="/">
+                <img src="img/logo.png" alt="Logo" className="img-fluid rounded-circle" />
               </a>
-              <form className="form-inline my-2 my-lg-0 mx-auto">
+              <div className="d-flex justify-content-center flex-grow-1 ms-4">
+                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li className="nav-item">
+                    <a className="nav-link fw-bold" href="#">
+                      Giới Thiệu
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link fw-bold" href="#">
+                      Sản Phẩm
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link fw-bold" href="#">
+                      About
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <form
+                className="form-inline mx-auto d-flex flex-grow-1 me-2"
+                style={{ maxWidth: 400 }}
+              >
                 <div className="input-group">
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="Tìm sản phẩm..."
-                    aria-label="Recipient's username"
-                    aria-describedby="basic-addon2"
+                    placeholder="Tìm sản phẩm, thương hiệu bạn mong muốn..."
+                    aria-label="Tìm kiếm sản phẩm"
                   />
                   <div className="input-group-append">
-                    <button className="btn btn-outline-secondary" type="button">
-                      <i className="fas fa-search" />
+                    <button className="buy-btn btn btn-outline-secondary" type="button">
+                    <i className="fas fa-search" />
                     </button>
                   </div>
                 </div>
@@ -30,84 +49,27 @@ const Header = () => {
               <div className="d-none d-lg-block d-flex align-items-center">
                 <button
                   type="button"
-                  className="btn btn-outline-dark mr-2 buy-btn"
+                  className="btn btn-outline-dark mr-2 buy-btn me-2"
                   data-toggle="modal"
                   data-target="#loginModal"
                 >
                   <i className="fas fa-shopping-cart"/>
                 </button>
                 <button
-                  type="button"
-                  className="btn btn-outline-dark buy-btn"
-                  data-toggle="modal"
-                  data-target="#cartModal"
-                >
-                  Đăng Nhập
-                </button>
-              </div>
-            </div>
-          </nav>
-          <nav className="navbar navbar-expand-lg navbar-dark bg-dark text-center">
-            {" "}
-            <div className="container">
-              <button
-                className="navbar-toggler"
                 type="button"
-                data-toggle="collapse"
-                data-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
+                className="btn btn-outline-dark buy-btn"
+                data-toggle="modal"
+                data-target="#cartModal"
+                onClick={() => navigate("/authen")}
               >
-                <span className="navbar-toggler-icon" />
+                Đăng Nhập
               </button>
-              <div
-                className="collapse navbar-collapse justify-content-center"
-                id="navbarNav"
-              >
-                <ul className="navbar-nav">
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      Trang Chủ
-                    </a>
-                  </li>
-                  <li className="nav-item" onClick={() => navigate("/product")}>
-                    <span className="nav-link text-white link-primary" role="button">
-                      Organ / Keyboard
-                    </span>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      Guitar
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      Trống - Bộ Gõ
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      Kèn - Sáo - Violin
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      Phụ kiện
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      Phòng thu
-                    </a>
-                  </li>
-                </ul>
               </div>
             </div>
           </nav>
-        </div>
-      </>
+      </div>
     </>
   );
 };
+
 export default Header;

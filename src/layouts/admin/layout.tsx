@@ -25,12 +25,12 @@ const items: MenuProps["items"] = [
   },
   {
     key: "2",
-    label: "Người Dùng",
+    label: "User",
     icon: <UserOutlined />
   },
   {
     key: "3",
-    label: "Sản Phẩm",
+    label: "Products",
     icon: <DollarOutlined />
   }
 ];
