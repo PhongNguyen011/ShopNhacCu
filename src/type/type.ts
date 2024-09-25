@@ -1,5 +1,5 @@
 export type Product ={
-    id: number;
+    id: string;
     name: string;
     type: string;
     price: string;
@@ -9,5 +9,29 @@ export type Product ={
 }
 
 export type DataMainProvider = {
-    products: Product[]
+    products: Product[];
+    users: Users[];
 }
+
+export type Users = {
+    address: {
+      geolocation: {
+        lat: string;
+        long: string;
+      };
+      city: string;
+      street: string;
+      number: number;
+      zipcode: string;
+    };
+    id: number;
+    email: string;
+    username: string;
+    password: string;
+    name: {
+      firstname: string;
+      lastname: string;
+    };
+    phone: string;
+    __v: number;
+  };

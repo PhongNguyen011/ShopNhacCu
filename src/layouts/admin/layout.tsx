@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { HomeOutlined, UserOutlined, DollarOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Layout, Menu, theme } from "antd";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -25,21 +25,49 @@ const items: MenuProps["items"] = [
   },
   {
     key: "2",
-    label: "User",
-    icon: <UserOutlined />
+    label: "Profile",
+    icon: <UserOutlined />,
   },
   {
     key: "3",
+    label: "User",
+    icon: <DollarOutlined />,
+  },
+  {
+    key: "4",
     label: "Products",
-    icon: <DollarOutlined />
-  }
+    icon: <DollarOutlined />,
+  },
 ];
 
 const LayoutAdmin: React.FC = () => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+  const navigate = useNavigate();
 
+  const [current, setCurrent] = useState("1");
+
+  const onClick: MenuProps["onClick"] = (e) => {
+    console.log("click ", e);
+    setCurrent(e.key);
+    switch (e.key) {
+      case "1":
+        navigate("/admin/dashboard");
+        break;
+      case "2":
+        navigate("/admin/profile");
+        break;
+      case "3":
+        navigate("/admin/user");
+        break;
+      case "4":
+        navigate("/admin/product");
+        break;
+      default:
+        break;
+    }
+  };
   return (
     <Layout hasSider>
       <Sider style={siderStyle}>
@@ -49,6 +77,7 @@ const LayoutAdmin: React.FC = () => {
           mode="inline"
           defaultSelectedKeys={["1"]}
           items={items}
+          onClick={onClick}
         />
       </Sider>
       <Layout style={{ marginInlineStart: 200 }}>

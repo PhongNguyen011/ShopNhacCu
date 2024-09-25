@@ -15,7 +15,8 @@ const Authen = () => {
         >
           <li className="nav-item" role="presentation">
             <button
-              className="buy-btn me-3"
+              className="nav-link active py-3 shadow-lg"
+              style={{width: 200}}
               id="pills-home-tab"
               data-bs-toggle="pill"
               data-bs-target="#pills-home"
@@ -29,7 +30,8 @@ const Authen = () => {
           </li>
           <li className="nav-item" role="presentation">
             <button
-              className="buy-btn"
+              style={{width: 200}}
+              className="nav-link py-3 shadow-lg"
               id="pills-profile-tab"
               data-bs-toggle="pill"
               data-bs-target="#pills-profile"
@@ -76,12 +78,12 @@ const Authen = () => {
               </div>
               <button
                 type="submit"
-                className="buy-btn btn-primary w-100"
+                className="btn btn-dark w-100"
                 onClick={() => navigate("/admin/dashboard")}
               >
                 Đăng nhập
               </button>
-              <a href="#" className="text-dark d-block text-center mt-2">
+              <a href="#" className="d-block text-center mt-2">
                 Quên mật khẩu?
               </a>
             </form>
@@ -128,7 +130,7 @@ const Authen = () => {
                   placeholder="Nhập mật khẩu"
                 />
               </div>
-              <button type="submit" className="buy-btn btn-primary w-100">
+              <button type="submit" className="btn btn-dark w-100">
                 Đăng ký
               </button>
             </form>

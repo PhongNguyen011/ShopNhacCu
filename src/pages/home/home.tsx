@@ -1,4 +1,10 @@
+import { useContext } from "react";
+import { MainContext } from "../../context/mainprovider";
+import { useNavigate } from "react-router-dom";
+
 const HomePage = () => {
+  const { data } = useContext(MainContext);
+  const navigate = useNavigate();
   return (
     <>
       <div>
@@ -82,81 +88,34 @@ const HomePage = () => {
           </div>
           <div className="container">
             <h2 className="mt-4 mb-4 text-center">Sản phẩm nổi bật</h2>
-            <div className="row" id="product-list">
-              <div className="col-md-4 mb-4">
-                <div className="product-card text-center p-3 border rounded">
-                  <img
-                    src="img/YamahaU1H.png"
-                    alt="Yamaha U1H"
-                    className="img-fluid mb-3"
-                  />
-                  <h5 className="product-name">Yamaha U1H</h5>
-                  <p className="price">Giá: 37.000.000 VNĐ</p>
-                  <button className="buy-btn">Mua ngay</button>
-                </div>
-              </div>
-              <div className="col-md-4 mb-4">
-                <div className="product-card text-center p-3 border rounded">
-                  <img
-                    src="img/GuitarCordobaStage.png"
-                    alt="Guitar Cordoba Stage"
-                    className="img-fluid mb-3"
-                  />
-                  <h5 className="product-name">Guitar Cordoba Stage</h5>
-                  <p className="price">Giá: 18,500,000 VNĐ</p>
-                  <button className="buy-btn">Mua ngay</button>
-                </div>
-              </div>
-              <div className="col-md-4 mb-4">
-                <div className="product-card text-center p-3 border rounded">
-                  <img
-                    src="img/TrongPearlDMP925SPC.png"
-                    alt="Trống Pearl DMP925SP/C"
-                    className="img-fluid mb-3"
-                  />
-                  <h5 className="product-name">Trống Pearl DMP925SP/C</h5>
-                  <p className="price">Giá: 20,700,000 VNĐ</p>
-                  <button className="buy-btn">Mua ngay</button>
-                </div>
-              </div>
-              <div className="col-md-4 mb-4 additional-product">
-                <div className="product-card text-center p-3 border rounded">
-                  <img
-                    src="img/KapokMV18 44.png"
-                    alt="KapokMV18 44"
-                    className="img-fluid mb-3"
-                  />
-                  <h5 className="product-name">Kapo kMV18 4/4</h5>
-                  <p className="price">Giá: 37.000.000 VNĐ</p>
-                  <button className="buy-btn">Mua ngay</button>
-                </div>
-              </div>
-              <div className="col-md-4 mb-4 additional-product">
-                <div className="product-card text-center p-3 border rounded">
-                  <img
-                    src="img/FenderPlayerStratPLSTOPPFTBS.png"
-                    alt="Fender Player Strat PLS TOP PF TBS"
-                    className="img-fluid mb-3"
-                  />
-                  <h5 className="product-name">
-                    Fender Player Strat PLS TOP PF TBS
-                  </h5>
-                  <p className="price">Giá: 18,500,000 VNĐ</p>
-                  <button className="buy-btn">Mua ngay</button>
-                </div>
-              </div>
-              <div className="col-md-4 mb-4 additional-product">
-                <div className="product-card text-center p-3 border rounded">
-                  <img
-                    src="img/OrganCasioSA-80.png"
-                    alt="Organ Casio SA-80"
-                    className="img-fluid mb-3"
-                  />
-                  <h5 className="product-name">Organ Casio SA-80</h5>
-                  <p className="price">Giá: 20,700,000 VNĐ</p>
-                  <button className="buy-btn">Mua ngay</button>
-                </div>
-              </div>
+            <div className="row row-cols-1 row-cols-lg-2 row-cols-xl-3 gy-4 mb-5">
+              {data?.products.slice(0, 6).map((items, index) => {
+                return (
+                  <>
+                    <div
+                      className="col"
+                      key={index}
+                      role="button"
+                      onClick={() => navigate(`/product/${items.id}`)}
+                    >
+                      <div className="card">
+                        <img
+                          className="card-img-top"
+                          src={items.image}
+                          alt={items.name}
+                        />
+                        <div className="card-body">
+                          <h4 className="card-title">{items.name}</h4>
+                          <p className="card-text">{items.price} VND</p>
+                          <button className="buy-btn" type="button">
+                            Mua
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                );
+              })}
             </div>
           </div>
         </div>

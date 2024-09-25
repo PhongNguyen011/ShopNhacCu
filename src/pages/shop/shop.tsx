@@ -5,6 +5,7 @@ interface CartItem {
   price: number;
   quantity: number;
   total: number;
+  image : string;
 }
 const ShopPage = () => {
   const carts: CartItem[] = [
@@ -13,14 +14,16 @@ const ShopPage = () => {
       name: "Product A",
       price: 1000,
       quantity: 10,
-      total: 10000,
+      total: 100000,
+      image: "img/YamahaU1H.png"
     },
     {
       id: 2,
       name: "Product B",
-      price: 1000,
+      price: 350000,
       quantity: 10,
-      total: 10000,
+      total: 3500000,
+      image: "img/Roland Fantom 8.png"
     },
   ];
   const calculateTotalSum = (): number => {
@@ -45,13 +48,13 @@ const ShopPage = () => {
                 <th>Hành Động</th>
               </tr>
             </thead>
-            <tbody id="cart">
+            <tbody id="cart" className="">
               {carts.map((items) => {
                 return (
                   <>
                     <tr>
                       <td>
-                        <img src="https://via.placeholder.com/60" alt="" />
+                        <img src={items.image} height={50} width={50} alt="" />
                       </td>
                       <td>{items.name}</td>
                       <td>{items.price} VND</td>
