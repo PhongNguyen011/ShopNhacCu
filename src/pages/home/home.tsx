@@ -96,12 +96,12 @@ const HomePage = () => {
                       className="col"
                       key={index}
                       role="button"
-                      onClick={() => navigate(`/product/${items.id}`)}
+                      onClick={() => navigate(`/product/${items.pro_id}`)}
                     >
                       <div className="card">
                         <img
                           className="card-img-top"
-                          src={items.image}
+                          src={items.img}
                           alt={items.name}
                         />
                         <div className="card-body">
